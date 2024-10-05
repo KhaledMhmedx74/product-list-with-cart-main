@@ -1,0 +1,300 @@
+/* Colors */
+:root {
+  --red: hsl(14, 86%, 42%);
+  --green: hsl(159, 69%, 38%);
+  
+  --rose-50: hsl(20, 50%, 98%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-300: hsl(14, 25%, 72%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-500: hsl(12, 20%, 44%);
+  --rose-900: hsl(14, 65%, 9%);
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Typography */
+body {
+    font-family: 'Red Hat Text', sans-serif;
+    background-color: var(--rose-100);
+    position: relative;
+}
+
+/* Font Weights */
+/* .font-regular {
+    font-weight: 400;
+}
+
+.font-semi-bold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+} */
+
+/* Product Name Font Size */
+/* .product-name {
+    font-size: 16px;
+} */
+
+.container{
+    padding: 70px 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.desserts .content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 20px;
+    margin-top: 30px;
+}
+.desserts .content .card{
+    width: 250px;
+    .image{
+        width: 100%;
+        position: relative;
+        img{
+            width: 100%;
+            border-radius: 15px;
+        }
+        .add, .amount{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            padding: 10px 20px;
+            border-radius: 40px;
+            border: 2px solid var(--red);
+            width: 50%;
+            cursor: pointer;
+        }
+        .add{
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            border: 2px solid var(--red);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            img{
+                width: 25px;
+            }
+        }
+        .amount{
+            background-color: var(--red);
+            color: white;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            span{
+                width: 15px;
+                height: 15px;
+                padding: 3px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                border: 1px solid white;
+                border-radius: 50%;
+                transition: 0.3s;
+            }
+            span:hover{
+                background-color: white;
+                color: var(--red);
+            }
+        }
+    }
+}
+.desserts .card .details{
+    margin-top: 30px;
+    p{
+        color: var(--rose-400);
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .price{
+        margin-top: 10px;
+        color: var(--red);
+        font-weight: 700;
+    }
+}
+
+.cart{
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    width: 340px;
+    h2{
+        color: var(--red);
+    }
+    .details{
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        p{
+            color: var(--rose-500);
+        }
+    }
+}
+
+.cart .cart-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h4{
+        font-size: 20px;
+    }
+    .tot{
+        margin-top: 10px;
+        display: flex;
+        gap: 15px;
+        .pri{
+            color: var(--rose-300);
+        }
+        .num{
+            color: var(--red);
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .numxpri{
+            color: var(--rose-500);
+        }
+    }
+    button{
+        border-radius: 50%;
+        padding: 1px 3px;
+        border: 1px solid var(--rose-300);
+        cursor: pointer;
+        transition: 0.4s;
+    }
+    button:hover{
+        color: black;
+        border-color: black;
+    }
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rose-100);
+}
+.cart .details .total-prices{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.cart .details .carbon{
+    background-color: var(--rose-100);
+    text-align: center;
+    padding: 15px;
+    margin: 15px 0;
+    width: 100%;
+    border-radius: 12px;
+}
+
+#confirm{
+    background-color: var(--red);
+    color: white;
+    width: 90%;
+    padding: 18px;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+#confirm:hover{
+    background-color: hsl(14, 86%, 33%);
+}
+
+.order-confirmed{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.384);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-confirmed .content{
+    width: 30%;
+    padding: 40px 35px;
+    border-radius: 20px;
+    background-color: white;
+    img{
+        margin-bottom: 30px;
+    }
+    h1{
+        font-size: 45px;
+        font-weight: 800;
+    }
+    p{
+        color: var(--rose-300);
+        font-size: 18px;
+    }
+}
+.order-confirmed .content .products{
+    background-color: var(--rose-50);
+    margin: 25px 0;
+    padding: 24px;
+    border-radius: 15px;
+    .total-prices{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2{
+            font-weight: 800;
+        }
+    }
+}
+.order-confirmed .content .products .card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 15px 10px;
+    border-bottom: 1px solid var(--rose-100);
+    .details{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        img{
+            width: 65px;
+            margin: 0;
+        }
+        .small-details{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .amount{
+                color: var(--red);
+                font-weight: bold;
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+/* Layout */
+@media (max-width: 475px) {
+    .order-confirmed .content {
+        width: 100%;
+    }
+    .desserts .content{
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    }
+}
